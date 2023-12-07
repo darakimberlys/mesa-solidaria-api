@@ -16,10 +16,7 @@ namespace mesa_solidaria_api.Data.Migrations
                     NormalizedName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_AspNetRoles", x => x.Id); });
 
             migrationBuilder.CreateTable(
                 name: "AspNetUsers",
@@ -41,10 +38,7 @@ namespace mesa_solidaria_api.Data.Migrations
                     LockoutEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
                     AccessFailedCount = table.Column<int>(type: "INTEGER", nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_AspNetUsers", x => x.Id); });
 
             migrationBuilder.CreateTable(
                 name: "DeviceCodes",
@@ -60,10 +54,7 @@ namespace mesa_solidaria_api.Data.Migrations
                     Expiration = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Data = table.Column<string>(type: "TEXT", maxLength: 52660, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DeviceCodes", x => x.UserCode);
-                });
+                constraints: table => { table.PrimaryKey("PK_DeviceCodes", x => x.UserCode); });
 
             migrationBuilder.CreateTable(
                 name: "Keys",
@@ -78,10 +69,7 @@ namespace mesa_solidaria_api.Data.Migrations
                     DataProtected = table.Column<bool>(type: "INTEGER", nullable: false),
                     Data = table.Column<string>(type: "TEXT", maxLength: 52660, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Keys", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_Keys", x => x.Id); });
 
             migrationBuilder.CreateTable(
                 name: "PersistedGrants",
@@ -98,10 +86,7 @@ namespace mesa_solidaria_api.Data.Migrations
                     ConsumedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     Data = table.Column<string>(type: "TEXT", maxLength: 52660, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PersistedGrants", x => x.Key);
-                });
+                constraints: table => { table.PrimaryKey("PK_PersistedGrants", x => x.Key); });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",

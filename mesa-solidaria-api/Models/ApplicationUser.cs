@@ -4,5 +4,4 @@ namespace mesa_solidaria_api.Models;
 
 public class ApplicationUser : IdentityUser
 {
-    
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace mesa_solidaria_api.Models;
+namespace MesaSolidariaApi.Core.Models;
 
 public class ApplicationUser : IdentityUser
 {

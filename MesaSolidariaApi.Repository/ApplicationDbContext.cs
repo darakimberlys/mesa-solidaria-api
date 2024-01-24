@@ -1,4 +1,5 @@
 using MesaSolidariaApi.Core.Models;
+using MesaSolidariaApi.Repository.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace MesaSolidariaApi.Repository;
@@ -13,11 +14,10 @@ public class ApplicationDbContext : DbContext
     public DbSet<Package> Packages { get; set; }
     public DbSet<Product> Products { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Substitua "sua_string_de_conexao_mysql" pelos detalhes da sua conexão MySQL
-        //optionsBuilder.UseMySql("sua_string_de_conexao_mysql");
+        modelBuilder.ApplyConfiguration(new DeliveriesConfiguration());
+        modelBuilder.ApplyConfiguration(new PackagesConfiguration());
+        modelBuilder.ApplyConfiguration(new ProductsConfiguration());
     }
 }
-
-

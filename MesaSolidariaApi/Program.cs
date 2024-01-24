@@ -1,4 +1,5 @@
 using MassTransit;
+using MesaSolidariaApi.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,17 +8,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var configuration = builder.Configuration;
-var conexao = configuration.GetSection("MassTransitAzure")["Connection"] ?? string.Empty;
 
-builder.Services.AddMassTransit(x =>
-{
-    x.UsingAzureServiceBus((context, cfg) =>
-    {
-        cfg.Host(conexao);
-
-        cfg.ConfigureEndpoints(context);
-    });
-});
+builder.Services.AddDataBaseConnection(configuration);
+builder.Services.AddPubSubConfiguration(configuration);
 
 var app = builder.Build();
 

@@ -22,6 +22,10 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\MesaSolidariaApi.Core\MesaSolidariaApi.Core.csproj" />
+      <ProjectReference Include="..\MesaSolidariaApi.Repository\MesaSolidariaApi.Repository.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

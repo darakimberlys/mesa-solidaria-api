@@ -1,0 +1,43 @@
+/* Add your custom styles here */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body {
+  font-family: 'Josefin Sans', cursive;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Add the existing styles from your _Layout.cshtml file here */
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

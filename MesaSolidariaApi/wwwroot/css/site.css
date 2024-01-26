@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Josefin Sans', cursive;
-  background-color: #ffa34e;
+  background-color: #ffbf82;
 }
 
 .text-center {
@@ -44,11 +44,11 @@ body {
 }
 
 .custom-navbar {
-  background-color: #e78124;
+  background-color: #ffbf82;
 }
 
 .custom-navbar .navbar-brand {
-  color: #e78124;
+  color: #ffbf82;
 }
 
 .custom-navbar .navbar-toggler-icon {
@@ -56,9 +56,14 @@ body {
 }
 
 .custom-navbar .navbar-nav .nav-link {
-  color: #fff;
+  color: #ffbf82;
 }
 
 .custom-navbar .navbar-nav .nav-link:hover {
-  color: #fff;
+  color: #ffbf82;
+}
+
+.logo-img {
+  width: 50%;
+  height: auto;
 }

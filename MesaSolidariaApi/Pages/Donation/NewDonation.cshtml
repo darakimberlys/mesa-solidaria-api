@@ -1,0 +1,15 @@
+@page
+@model NewDonationModel
+@{
+    ViewData["Title"] = "Doação";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Faça a Diferença</h1>
+    <p class="paragraph">Escolha como você gostaria de contribuir:</p>
+
+    <div class="options">
+        <a asp-page="./DoarPacotes" class="btn btn-primary">Doar Pacotes</a>
+        <a asp-page="./ProdutosSeparados" class="btn btn-success">Produtos Separados</a>
+    </div>
+</div>

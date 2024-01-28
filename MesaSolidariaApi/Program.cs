@@ -1,7 +1,13 @@
+using MesaSolidariaApi.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddServices();
+builder.Services.AddDataBaseConnection(configuration);
+builder.Services.AddPubSubConfiguration(configuration);
 
 var app = builder.Build();
 
@@ -21,5 +27,13 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
 
 app.Run();

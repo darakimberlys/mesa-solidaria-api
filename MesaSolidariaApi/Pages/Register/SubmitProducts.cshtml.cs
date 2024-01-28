@@ -1,6 +1,8 @@
-namespace MesaSolidariaApi.Core.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-public class Product
+namespace MesaSolidariaApi.Pages.Register;
+
+public class SubmitProductsModel : PageModel
 {
     public int Id { get; set; }
     public string Donator { get; set; }

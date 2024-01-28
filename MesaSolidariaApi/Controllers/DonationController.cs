@@ -1,4 +1,5 @@
 using MassTransit;
+using MesaSolidariaApi.Pages.Donation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MesaSolidariaApi.Controllers;
@@ -14,6 +15,15 @@ public class DonationController : Controller
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Página inicial
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult Index()
+    {
+        return View();
+    } 
+    
     /// <summary>
     /// Direcionamento para a página de login
     /// </summary>

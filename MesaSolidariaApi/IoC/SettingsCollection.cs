@@ -1,4 +1,6 @@
 using MassTransit;
+using MesaSolidariaApi.Core.Services;
+using MesaSolidariaApi.Core.Services.Interfaces;
 using MesaSolidariaApi.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,5 +28,10 @@ public static class SettingsCollection
                 cfg.ConfigureEndpoints(context);
             });
         });
+    }
+
+    public static void AddServices(this IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddTransient<IDonationService, DonationService>();
     }
 }

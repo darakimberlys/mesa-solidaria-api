@@ -1,6 +1,8 @@
-namespace MesaSolidariaApi.Core.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-public class Package
+namespace MesaSolidariaApi.Pages.Register;
+
+public class SubmitPackagesModel : PageModel
 {
     public string Donator { get; set; }
     public string PackageReference { get; set; }

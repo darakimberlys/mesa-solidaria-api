@@ -1,50 +1,114 @@
-using MassTransit;
 using MesaSolidariaApi.Core.Models;
+using MesaSolidariaApi.Core.Services.Interfaces;
+using MesaSolidariaApi.Pages.Register;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MesaSolidariaApi.Controllers;
 
-[ApiController]
-[Route("/Pedido")]
-public class RegisterController : ControllerBase
+public class RegisterController : Controller
 {
-    private readonly IBus _bus;
-    private readonly IConfiguration _configuration;
-    
-    public RegisterController(IBus bus, IConfiguration configuration)
-    {
-        _bus = bus;
-        _configuration = configuration;
-    }
-    
-    [HttpPost]
-    public async Task<IActionResult> Post()
-    {
-        var nomeFila = _configuration.GetSection("MassTransitAzure")["Subscription"];
-        var endpoint = await _bus.GetSendEndpoint(new Uri($"queue:{nomeFila}"));
+    private readonly IDonationService _donationService;
 
-        //await endpoint.Send(new Pedido(1, new Usuario(2,"bolovo", "Justen")));
-        return Ok();
-    }
-    
-    [HttpPost]
-    public async Task<IActionResult> PostPacketsReceived()
+    public RegisterController(IDonationService donationService)
     {
-        return Ok();
+        _donationService = donationService;
     }
-    
-    [HttpPost]
-    public async Task<IActionResult> PostIndividualProducts()
+
+    /// <summary>
+    /// Página inicial
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult Acknowledgment()
     {
-        return Ok();
+        return View();
+    } 
+
+    /// <summary>
+    /// Direciona para a página do formulário de registro de produtos para doaçao
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult SubmitProducts()
+    {
+        return View(new SubmitProductsModel());
+    }
+
+    /// <summary>
+    /// Valida o formulário de registro de pacotes para doaçao e manda para a fila
+    /// </summary>
+    /// <param name="model"></param>
+    /// <returns></returns>
+    [HttpPost]
+    public async Task<IActionResult> SubmitProducts(SubmitProductsModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            await _donationService.SendMessageToServiceBus(new Message
+            {
+                MessageType = MessageType.ProductsReceived,
+                Product = new Product
+                {
+                    Donator = model.Donator,
+                    Rice = model.Rice,
+                    Bean = model.Bean,
+                    Oil = model.Oil
+                }
+            });
+            
+            return RedirectToAction("Acknowledgment");
+        }
+        else
+        {
+            ModelState.AddModelError(string.Empty, "Tentativa de envio do formulário inválida.");
+            
+            return RedirectToAction("SubmitProducts");
+        }
     }
     
+    /// <summary>
+    /// Direciona para a página do formulário de registro de pacotes para doaçao
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult SubmitPackages()
+    {
+        return View(new SubmitPackagesModel());
+    }
+
+    /// <summary>
+    /// Valida o formulário de registro de pacotes para doaçao e manda para a fila
+    /// </summary>
+    /// <param name="model"></param>
+    /// <returns></returns>
+    [HttpPost]
+    public async Task<IActionResult> SubmitPackages(SubmitPackagesModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            await _donationService.SendMessageToServiceBus(new Message
+            {
+                MessageType = MessageType.PackageReceived,
+                Product = new Product
+                {
+                    Donator = model.Donator,
+                    Rice = model.Rice,
+                    Bean = model.Bean,
+                    Oil = model.Oil
+                }
+            });
+            return RedirectToAction("Acknowledgment");
+        }
+        else
+        {
+            ModelState.AddModelError(string.Empty, "Tentativa de envio do formulário inválida.");
+            return RedirectToAction("SubmitPackages");
+        }
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetCompleteOrdersQueue()
     {
         return Ok();
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> GetStorageUpdated()
     {

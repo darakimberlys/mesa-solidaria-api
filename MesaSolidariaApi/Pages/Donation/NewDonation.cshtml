@@ -1,5 +1,5 @@
 @page
-@model NewDonationModel
+@model MesaSolidariaApi.Pages.Donation.NewDonationModel
 @{
     ViewData["Title"] = "Doação";
 }
@@ -9,7 +9,7 @@
     <p class="paragraph">Escolha como você gostaria de contribuir:</p>
 
     <div class="options">
-        <a asp-page="./DoarPacotes" class="btn btn-primary">Doar Pacotes</a>
-        <a asp-page="./ProdutosSeparados" class="btn btn-success">Produtos Separados</a>
-    </div>
+        <a asp-controller="Register" asp-action="SubmitProducts" class="btn btn-primary">Doar Pacotes</a>
+        <a asp-controller="Register" asp-action="SubmitProducts" class="btn btn-primary">Produtos Separados</a>
+     </div>
 </div>

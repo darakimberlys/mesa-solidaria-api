@@ -1,4 +1,4 @@
-# Mesa Solidária
+# Mesa-Solidaria-API
 
 ## Visão Geral
 
@@ -20,7 +20,7 @@ O objetivo principal da API *Mesa Solidária* é praticar os conhecimentos de ar
    - Entregadores voluntários têm a opção de agendar a entrega de suas doações, garantindo conveniência para ambas as partes.
 
 3. **Relatórios de Estoque e Pedidos Efetuados:**
-   - A aplicação possui a "Transparencia" de seus serviços, mostrando pedidos distribuídas e estoque disponível.
+   - A aplicação possui a "transparência" de seus serviços, mostrando pedidos distribuídas e estoque disponível.
 
 ## Tecnologias Utilizadas
 

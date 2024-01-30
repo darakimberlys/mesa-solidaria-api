@@ -5,8 +5,8 @@ var configuration = builder.Configuration;
 
 builder.Services.AddRazorPages();
 builder.Services.AddServices();
-builder.Services.AddDataBaseConnection(configuration);
-builder.Services.AddPubSubConfiguration(configuration);
+builder.Services.AddDataBaseConnection();
+builder.Services.AddPubSubConfiguration();
 
 var app = builder.Build();
 

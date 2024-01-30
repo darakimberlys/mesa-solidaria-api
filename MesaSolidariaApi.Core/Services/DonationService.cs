@@ -18,7 +18,7 @@ public class DonationService : IDonationService
 
     public async Task SendMessageToServiceBus(Message message)
     {
-        var pubSub = _configuration.GetSection("MassTransitAzure")["Subscription"];
+        var pubSub = Environment.GetEnvironmentVariable("Subscription");
         var endpoint = await _bus.GetSendEndpoint(new Uri($"queue:{pubSub}"));
 
         await endpoint.Send(message);

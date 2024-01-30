@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-A Mesa Solidária é uma aplicação desenvolvida para uma **fictícia** dedicada a receber doações de alimentos e distribuir para aqueles em situação de vulnerabilidade. A aplicação foca principalmente em três itens essenciais: arroz, feijão e óleo.
+A Mesa Solidária é uma aplicação desenvolvida para uma **ONG fictícia** dedicada a receber doações de alimentos e distribuir para aqueles em situação de vulnerabilidade. A aplicação foca principalmente em três itens essenciais: arroz, feijão e óleo.
 
 ## Objetivo
 

@@ -1,5 +1,7 @@
 # Mesa-Solidaria-API
 
+[![Build and deploy ASP.Net Core app to Azure Web App - mesasolidariaapi](https://github.com/darakimberlys/mesa-solidaria-api/actions/workflows/master_mesasolidariaapi.yml/badge.svg)](https://github.com/darakimberlys/mesa-solidaria-api/actions/workflows/master_mesasolidariaapi.yml)
+
 ## Visão Geral
 
 A Mesa Solidária é uma aplicação desenvolvida para uma **ONG fictícia** dedicada a receber doações de alimentos e distribuir para aqueles em situação de vulnerabilidade. A aplicação foca principalmente em três itens essenciais: arroz, feijão e óleo.

@@ -1,0 +1,11 @@
+@model MesaSolidariaApi.Views.Donation.NewDonationModel
+
+<div class="text-center">
+    <h1 class="display-4">Faça a Diferença</h1>
+    <p class="paragraph">Escolha como você gostaria de contribuir:</p>
+
+    <div class="options">
+        <a asp-controller="Donation" asp-action="SubmitPackages" class="btn btn-primary">Doar Pacotes</a>
+        <a asp-controller="Donation" asp-action="SubmitProducts" class="btn btn-primary">Produtos Separados</a>
+     </div>
+</div>

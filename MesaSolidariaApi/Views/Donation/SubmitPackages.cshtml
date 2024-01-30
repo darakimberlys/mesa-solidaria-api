@@ -1,8 +1,6 @@
-@page
-@model MesaSolidariaApi.Pages.Register.SubmitProductsModel
-@{
-    ViewData["Title"] = "Formulário de Doação de Produtos";
-}
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MesaSolidariaApi.Views.Donation.SubmitPackagesModel
+
 
 <div class="container">
     <h1>@ViewData["Title"]</h1>
@@ -11,27 +9,27 @@
         <div class="form-group">
             <label for="doador">Doador:</label>
             <input type="text" class="form-control" id="doador" name="doador">
-            <span asp-validation-for="Donator" class="text-danger"></span>
+            <span asp-validation-for="Packages.Donator" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label for="arroz">Arroz:</label>
             <input type="number" class="form-control" id="arroz" name="arroz">
-            <span asp-validation-for="Rice" class="text-danger"></span>
+            <span asp-validation-for="Packages.Rice" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label for="feijao">Feijão:</label>
             <input type="number" class="form-control" id="feijao" name="feijao">
-            <span asp-validation-for="Bean" class="text-danger"></span>
+            <span asp-validation-for="Packages.Bean" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label for="oleo">Óleo:</label>
             <input type="number" class="form-control" id="oleo" name="oleo">
-            <span asp-validation-for="Oil" class="text-danger"></span>
+            <span asp-validation-for="Packages.Oil" class="text-danger"></span>
         </div>
+                <button type="submit" class="btn btn-primary">Enviar Doação</button>
 
-        <button type="submit" class="btn btn-primary">Enviar Doação</button>
     </form>
 </div>

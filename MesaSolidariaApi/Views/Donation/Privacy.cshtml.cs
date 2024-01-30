@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MesaSolidariaApi.Pages;
+namespace MesaSolidariaApi.Views.Donation;
 
 public class PrivacyModel : PageModel
 {

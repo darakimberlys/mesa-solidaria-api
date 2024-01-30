@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MesaSolidariaApi.Pages.Donation;
+namespace MesaSolidariaApi.Views.Donation;
 
-public class AcknowledgmentModel : PageModel
+public class StorageUpdatedModelModel : PageModel
 {
     public void OnGet()
     {

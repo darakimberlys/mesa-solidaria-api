@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MesaSolidariaApi.Pages;
+namespace MesaSolidariaApi.Views.Donation;
 
 public class IndexModel : PageModel
 {

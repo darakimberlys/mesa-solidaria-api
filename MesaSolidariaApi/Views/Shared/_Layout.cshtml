@@ -29,7 +29,7 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Donation" asp-action="PostNewDonationRequest">Preciso de doação</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="GetCompleteOrdersQueue">Sou entregador</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Donation" asp-action="CompleteOrdersQueue">Sou entregador</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,8 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2024 - Mesa Solidária - <a asp-area="" asp-page="/Privacy">Privacy</a> <a asp-area="" asp-controller="Register" asp-action="GetStorageUpdated">Transparência</a>
+        &copy; 2024 - Mesa Solidária - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <a asp-area="" asp-controller="Donation" asp-action="Transparency">Transparência</a>
     </div>
 </footer>
 

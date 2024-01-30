@@ -11,4 +11,19 @@
       <ProjectReference Include="..\MesaSolidariaApi.Repository\MesaSolidariaApi.Repository.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Donation\Acknowledgment.cshtml" />
+      <AdditionalFiles Include="Views\Donation\DonationRequest.cshtml" />
+      <AdditionalFiles Include="Views\Donation\NewDonation.cshtml" />
+      <AdditionalFiles Include="Views\Donation\SubmitPackages.cshtml" />
+      <AdditionalFiles Include="Views\Donation\SubmitProducts.cshtml" />
+      <AdditionalFiles Include="Views\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    </ItemGroup>
+
 </Project>

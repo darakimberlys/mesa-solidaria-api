@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MesaSolidariaApi.Views.Donation.DonationRequestModel
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="solicitante">Solicitante:</label>
+            <input type="text" class="form-control" id="solicitante" name="solicitante" required>
+            <span asp-validation-for="PackageRequested.Requester" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Endereço">Endereço:</label>
+            <input type="text" class="form-control" id="Endereço" name="Endereço" required>
+            <span asp-validation-for="DeliveryRequested.Address" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="oleo">Óleo (em litros):</label>
+            <input type="number" class="form-control" id="oleo" name="oleo" min="0" required>
+            <span asp-validation-for="PackageRequested.Oil" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="arroz">Arroz (em kg):</label>
+            <input type="number" class="form-control" id="arroz" name="arroz" min="0" required>
+            <span asp-validation-for="PackageRequested.Rice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="feijao">Feijão (em kg):</label>
+            <input type="number" class="form-control" id="feijao" name="feijao" min="0" required>
+            <span asp-validation-for="PackageRequested.Bean" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar Pedido de Doação</button>
+    </form>
+</div>

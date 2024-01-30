@@ -23,7 +23,7 @@ public static class SettingsCollection
         {
             x.UsingAzureServiceBus((context, cfg) =>
             {
-                cfg.Host(configuration.GetSection("MassTransitAzure")["Connection"] ?? string.Empty);
+                cfg.Host(configuration.GetSection("MassTransitAzure")["PubSubConnection"] ?? string.Empty);
 
                 cfg.ConfigureEndpoints(context);
             });

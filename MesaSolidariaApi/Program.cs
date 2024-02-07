@@ -1,7 +1,6 @@
 using MesaSolidariaApi.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration = builder.Configuration;
 
 builder.Services.AddRazorPages();
 builder.Services.AddServices();

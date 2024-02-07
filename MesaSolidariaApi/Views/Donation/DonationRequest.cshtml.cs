@@ -1,5 +1,5 @@
-using MesaSolidariaApi.Core.Models;
 using MesaSolidariaApi.Core.Services.Interfaces;
+using MesaSolidariaApi.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

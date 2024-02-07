@@ -1,4 +1,4 @@
-using MesaSolidariaApi.Core.Models;
+using MesaSolidariaApi.Domain.Models;
 using MesaSolidariaApi.Repository.Configuration;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,5 +1,5 @@
-using MesaSolidariaApi.Core.Models;
 using MesaSolidariaApi.Core.Services.Interfaces;
+using MesaSolidariaApi.Domain.Models;
 using MesaSolidariaApi.Views.Donation;
 using Microsoft.AspNetCore.Mvc;
 
@@ -184,11 +184,27 @@ public class DonationController : Controller
         });
     }
 
-    public IActionResult StorageUpdated()
+    public async Task<IActionResult> StorageUpdated()
     {
+        var (product, dateBeans, dateRice, dateOil) = 
+            await _donationService.GetActualStorage();
+        
         return View(new StorageUpdatedModelModel
         {
-            //get all from database
+            Product = new Product
+            {
+                Bean = product.Bean,
+                Rice = product.Rice,
+                Oil = product.Oil
+            },
+            BeanLastUpdate = dateBeans,
+            RiceLastUpdate = dateRice,
+            OilLastUpdate = dateOil
         });
+    }
+    
+    public IActionResult Privacy()
+    {
+        return View();
     }
 }

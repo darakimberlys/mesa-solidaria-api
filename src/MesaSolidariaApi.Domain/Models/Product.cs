@@ -1,4 +1,4 @@
-namespace MesaSolidariaApi.Core.Models;
+namespace MesaSolidariaApi.Domain.Models;
 
 public class Product
 {
@@ -7,4 +7,5 @@ public class Product
     public int Rice { get; set; }
     public int Bean { get; set; }
     public int Oil { get; set; }
+    public DateTime LastUpdate { get; set; }
 }

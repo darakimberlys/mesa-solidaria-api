@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesaSolidariaApi.Repository
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesaSolidariaApi", "MesaSolidariaApi\MesaSolidariaApi.csproj", "{0FE86711-4A4A-4174-8150-DF076576CF77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesaSolidariaApi.Domain", "src\MesaSolidariaApi.Domain\MesaSolidariaApi.Domain.csproj", "{4F85C9DF-CA75-4B48-9854-ADACF88B3079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,10 +34,15 @@ Global
 		{0FE86711-4A4A-4174-8150-DF076576CF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE86711-4A4A-4174-8150-DF076576CF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE86711-4A4A-4174-8150-DF076576CF77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F85C9DF-CA75-4B48-9854-ADACF88B3079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F85C9DF-CA75-4B48-9854-ADACF88B3079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F85C9DF-CA75-4B48-9854-ADACF88B3079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F85C9DF-CA75-4B48-9854-ADACF88B3079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1027C121-E2D4-4940-B482-F5AF0410D192} = {F896F192-F19A-4E90-BEFD-10F119C793E0}
 		{460192A2-DFC6-4ADD-A40E-950A35CC86E4} = {F896F192-F19A-4E90-BEFD-10F119C793E0}
 		{0FE86711-4A4A-4174-8150-DF076576CF77} = {F896F192-F19A-4E90-BEFD-10F119C793E0}
+		{4F85C9DF-CA75-4B48-9854-ADACF88B3079} = {F896F192-F19A-4E90-BEFD-10F119C793E0}
 	EndGlobalSection
 EndGlobal

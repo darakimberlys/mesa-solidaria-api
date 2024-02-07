@@ -2,6 +2,8 @@ using MassTransit;
 using MesaSolidariaApi.Core.Services;
 using MesaSolidariaApi.Core.Services.Interfaces;
 using MesaSolidariaApi.Repository;
+using MesaSolidariaApi.Repository.Repository;
+using MesaSolidariaApi.Repository.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace MesaSolidariaApi.IoC;
@@ -32,6 +34,8 @@ public static class SettingsCollection
 
     public static void AddServices(this IServiceCollection serviceCollection)
     {
+        serviceCollection.AddScoped<IProductRepository, ProductRepository>();
+
         serviceCollection.AddTransient<IDonationService, DonationService>();
     }
 }

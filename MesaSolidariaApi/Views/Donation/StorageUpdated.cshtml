@@ -1,19 +1,31 @@
 @page
 @model MesaSolidariaApi.Views.Donation.StorageUpdatedModelModel
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+<div class="container-center">
+    <table class="table table-striped bg-white">
+        <thead class="thead-light">
+        <tr>
+            <th>Alimento</th>
+            <th>Quantidade</th>
+            <th>Última atualização</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Arroz</td>
+            <td>@Model.Product.Rice Kg</td>
+            <td>@Model.RiceLastUpdate</td>
+        </tr>
+        <tr>
+            <td>Feijão</td>
+            <td>@Model.Product.Bean Kg</td>
+            <td>@Model.BeanLastUpdate</td>
+        </tr>
+        <tr>
+            <td>Óleo</td>
+            <td>@Model.Product.Oil Litros</td>
+            <td>@Model.OilLastUpdate</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-</body>
-</html>

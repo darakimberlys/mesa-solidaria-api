@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MesaSolidariaApi.Core\MesaSolidariaApi.Core.csproj" />
+      <ProjectReference Include="..\src\MesaSolidariaApi.Domain\MesaSolidariaApi.Domain.csproj" />
     </ItemGroup>
 
 </Project>

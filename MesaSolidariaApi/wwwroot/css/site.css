@@ -67,3 +67,11 @@ body {
   width: 50%;
   height: auto;
 }
+
+.container-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+

@@ -1,4 +1,4 @@
-namespace MesaSolidariaApi.Core.Models;
+namespace MesaSolidariaApi.Domain.Models;
 
 public class Package
 {

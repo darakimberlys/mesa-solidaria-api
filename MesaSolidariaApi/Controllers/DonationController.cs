@@ -41,10 +41,48 @@ public class DonationController : Controller
         return View(new NewDonationModel());
     }
 
-    [HttpPost]
-    public async Task<IActionResult> PostNewDonationRequest()
+    public async Task<IActionResult> DonationRequest()
     {
-        return Ok();
+        return View(new DonationRequestModel());
+    }
+    
+    /// <summary>
+    /// Valida o formulário de registro de pacotes para doaçao e manda para a fila
+    /// </summary>
+    /// <param name="model"></param>
+    /// <returns></returns>
+    [HttpPost]
+    public async Task<IActionResult> DonationRequest(DonationRequestModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            await _donationService.SendMessageToServiceBus(new Message
+            {
+                MessageType = MessageType.DonationRequest,
+                Delivery = new Delivery
+                {
+                    Address = model.DeliveryRequested.Address,
+                    CreatedAt = DateTime.Today,
+                    Requester = model.DeliveryRequested.Requester
+                },
+                Package = new Package
+                {
+                    Bean = model.PackageRequested.Bean,
+                    Oil = model.PackageRequested.Oil,
+                    Rice = model.PackageRequested.Rice,
+                    Requester = model.PackageRequested.Requester
+                }
+            });
+            return RedirectToPage("Obrigado");
+            
+            return RedirectToAction("Acknowledgment");
+        }
+        else
+        {
+            ModelState.AddModelError(string.Empty, "Tentativa de envio do formulário inválida.");
+            
+            return RedirectToAction("SubmitProducts");
+        }
     }
 
     [HttpPost]
